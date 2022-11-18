@@ -1,0 +1,427 @@
+<script src="https://cdn.jsdelivr.net/gh/ericnograles/browser-image-resizer@2.1.3/dist/index.js"></script>
+<div class="container-fluid account">
+    <div class="row mb-3">
+        <div class="col-sm-9 mx-auto mt-2">
+            <!-- Profile widget -->
+            <div class="bg-white shadow rounded">
+                <div class="px-4 pt-0 pb-4 cover">
+                    <div class="media profile-head">
+                        <div class="profile mr-3">
+                            <img
+                                src="<%= profile %>"
+                                alt="<%= name %>"
+                                width="150"
+                                class="mx-md-4 mb-2"
+                                id="dpimg"
+                            /><br />
+                            <label
+                                id="upl"
+                                for="myFile"
+                                class="
+                                    btn btn-outline-dark btn-sm btn-block
+                                    rounded-pill
+                                "
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="25"
+                                    height="32"
+                                    fill="currentColor"
+                                    class="bi bi-camera"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path
+                                        d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"
+                                    />
+                                    <path
+                                        d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"
+                                    />
+                                </svg>
+                            </label>
+                            <input
+                                type="file"
+                                id="myFile"
+                                name="filename"
+                                accept=".jpg, .jpeg, .png"
+                                style="display: none"
+                                onchange="importFileandPreview()"
+                            />
+                        </div>
+
+                        <div
+                            class="
+                                media-body
+                                mb-4
+                                my-auto
+                                ms-4 ms-md-0
+                                text-white
+                            "
+                        >
+                            <h4 class="mt-0 mb-0"><%= name %></h4>
+                            <p class="small mb-4">
+                                <i class="fas fa-map-marker-alt mr-2"></i
+                                >Account
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    id="carouselExampleSlidesOnly"
+                    class="
+                        carousel
+                        slide
+                        carousel-fade
+                        pointer-event
+                        carousel-profile
+                    "
+                    data-bs-touch="false"
+                    data-bs-ride="false"
+                    style="height: inherit"
+                >
+                    <div class="carousel-inner bg-light" role="listbox">
+                        <div class="carousel-item">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-body h-auto">
+                                        <br /><br /><br />
+
+                                        <div class="row mb-3">
+                                            <div class="col-sm-4">
+                                                <h6 class="mb-0">
+                                                    Old Password
+                                                </h6>
+                                            </div>
+                                            <div
+                                                class="col-sm-8 text-secondary"
+                                            >
+                                                <input
+                                                    type="password"
+                                                    class="form-control"
+                                                    id="oldPass"
+                                                />
+                                                <div class="invalid-feedback">
+                                                    Your old password doesn't
+                                                    match!
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <div class="col-sm-4">
+                                                <h6 class="mb-0">
+                                                    New Password
+                                                </h6>
+                                            </div>
+                                            <div
+                                                class="col-sm-8 text-secondary"
+                                            >
+                                                <input
+                                                    type="password"
+                                                    class="form-control"
+                                                    id="newPass"
+                                                />
+                                                <div class="invalid-feedback">
+                                                    New Password is required!
+                                                </div>
+                                                <div class="valid-feedback">
+                                                    Your password was updated
+                                                    successfully!
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div class="col-sm-12" id="save-ch">
+                                                <a
+                                                    class="
+                                                        btn btn-info btn-dark
+                                                        me-sm-2
+                                                        mt-2
+                                                    "
+                                                    >Save Changes</a
+                                                >
+                                            </div>
+                                        </div>
+                                        <br />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item active">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-body h-auto">
+                                        <div
+                                            class="
+                                                row
+                                                mt-5
+                                                border-bottom
+                                                py-2
+                                                mx-1
+                                            "
+                                        >
+                                            <div
+                                                class="
+                                                    alert alert-success
+                                                    d-none
+                                                "
+                                                role="alert"
+                                                id="photoSuccess"
+                                            >
+                                                Profile picture updated
+                                                successfully!
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                <h6 class="mb-0">Full Name</h6>
+                                            </div>
+                                            <div
+                                                class="col-sm-8 text-secondary"
+                                            >
+                                                <%= name %>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="row border-bottom py-2 mx-1"
+                                        >
+                                            <div class="col-sm-4">
+                                                <h6 class="mb-0">Email</h6>
+                                            </div>
+                                            <div
+                                                class="col-sm-8 text-secondary"
+                                            >
+                                                <%= email %>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="row border-bottom py-2 mx-1"
+                                        >
+                                            <div class="col-sm-4">
+                                                <h6 class="mb-0" id="pwd">
+                                                    Password
+                                                </h6>
+                                                <a
+                                                    href="#"
+                                                    class="ms-3 ms-sm-0"
+                                                    id="reset"
+                                                    >Reset Password ?</a
+                                                >
+                                            </div>
+                                            <div
+                                                class="col-sm-8 text-secondary"
+                                            >
+                                                Updated on <%= new
+                                                Date(updated).toDateString() %>
+                                            </div>
+                                        </div>
+
+                                        <div class="row py-2 mx-1">
+                                            <div class="col-sm-4">
+                                                <h6 class="mb-0">User ID</h6>
+                                            </div>
+                                            <div
+                                                class="col-sm-8 text-secondary"
+                                            >
+                                                <%= _id %>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div class="col-sm-12">
+                                                <button
+                                                    class="
+                                                        btn btn-danger
+                                                        ms-sm-2
+                                                        mt-2
+                                                    "
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal"
+                                                >
+                                                    Delete Account
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div class="col-sm-12" id="edit">
+                                                <a
+                                                    class="
+                                                        btn btn-info btn-dark
+                                                        me-sm-2
+                                                        mt-2
+                                                    "
+                                                    >Edit</a
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-body h-auto">
+                                        <br /><br /><br />
+
+                                        <div class="row mb-3">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Full Name</h6>
+                                            </div>
+                                            <div
+                                                class="col-sm-9 text-secondary"
+                                            >
+                                                <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    id="name-ed"
+                                                    value="<%= name %>"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Email</h6>
+                                            </div>
+                                            <div
+                                                class="col-sm-9 text-secondary"
+                                            >
+                                                <input
+                                                    type="email"
+                                                    class="form-control"
+                                                    id="email-ed"
+                                                    value="<%= email %>"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">Password</h6>
+                                            </div>
+                                            <div
+                                                class="col-sm-9 text-secondary"
+                                            >
+                                                <input
+                                                    type="password"
+                                                    class="form-control"
+                                                    value="<%= Math.random %>"
+                                                    disabled
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <div class="col-sm-3">
+                                                <h6 class="mb-0">User ID</h6>
+                                            </div>
+                                            <div
+                                                class="col-sm-9 text-secondary"
+                                            >
+                                                <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    value="<%= _id %>"
+                                                    disabled
+                                                />
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="alert alert-success d-none"
+                                            role="alert"
+                                            id="profileEdSuccess"
+                                        >
+                                            Your details were updated
+                                            successfully!
+                                        </div>
+                                        <div
+                                            class="alert alert-danger d-none"
+                                            role="alert"
+                                            id="profileEdFailed"
+                                        >
+                                            Somewhere somehow something went
+                                            wrong!
+                                        </div>
+
+                                        <div>
+                                            <div class="col-sm-12" id="save">
+                                                <a
+                                                    class="
+                                                        btn btn-info btn-dark
+                                                        me-sm-2
+                                                        mt-2
+                                                    "
+                                                    >Save</a
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+>
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    Are you sure?
+                </h5>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                ></button>
+            </div>
+            <div class="modal-body account">
+                This will permanently <b>delete</b> all your entries, images and
+                account history.<br />
+                Since, this an unusal step you'll need to enter your password to
+                continue.
+                <br /><br />
+                <input
+                    type="password"
+                    class="form-control"
+                    id="pass"
+                    placeholder="Enter your password"
+                />
+                <div class="invalid-feedback" id="delInFeed">
+                    You entered wrong password!
+                </div>
+                <div class="valid-feedback" id="delFeed">
+                    Your account will be deleted in 10 seconds. Close this
+                    dialog to cancel deletion.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                >
+                    Close
+                </button>
+                <button type="button" class="btn btn-danger" id="delAcc">
+                    Delete My Account
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/profile.js"></script>

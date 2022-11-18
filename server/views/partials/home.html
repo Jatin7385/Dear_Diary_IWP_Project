@@ -1,0 +1,184 @@
+<script src="/main.js" defer></script>
+<div class="container-fluid">
+    <!-- Sub options year and calendar picker-->
+    <div class="row mt-3">
+        <div
+            class="
+                col
+                d-flex
+                justify-content-center
+                fs-5
+                align-items-center
+                ml-auto
+            "
+        >
+            <!-- Calendar icon : CLICK : OPEN Calendar @abhit -->
+            <div
+                class="
+                    badge
+                    rounded-pill
+                    bg-white
+                    text-dark
+                    p-2
+                    shadow-custom
+                    picker
+                "
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    fill="currentColor"
+                    class="bi bi-calendar-date-fill"
+                    viewBox="0 0 16 16"
+                >
+                    <path
+                        d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zm5.402 9.746c.625 0 1.184-.484 1.184-1.18 0-.832-.527-1.23-1.16-1.23-.586 0-1.168.387-1.168 1.21 0 .817.543 1.2 1.144 1.2z"
+                    />
+                    <path
+                        d="M16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-6.664-1.21c-1.11 0-1.656-.767-1.703-1.407h.683c.043.37.387.82 1.051.82.844 0 1.301-.848 1.305-2.164h-.027c-.153.414-.637.79-1.383.79-.852 0-1.676-.61-1.676-1.77 0-1.137.871-1.809 1.797-1.809 1.172 0 1.953.734 1.953 2.668 0 1.805-.742 2.871-2 2.871zm-2.89-5.435v5.332H5.77V8.079h-.012c-.29.156-.883.52-1.258.777V8.16a12.6 12.6 0 0 1 1.313-.805h.632z"
+                    />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <!-- Row of card entries -->
+    <div class="rol">
+        <div class="col mt-2">
+            <!-- prettier-ignore -->
+            <div
+                class="
+                    card-row <% if(docs.length == 0) { %> d-flex justify-content-center<%}%>"
+            >
+                <% if(docs.length == 0) {%>
+                <div class="card card-width m-2">
+                    <a href="/edit/new">
+                        <img src="https://source.unsplash.com/320x640" />
+                        <span class="overlay p-2">
+                            <h2 class="h2 pt-3 pb-1">Nothing to show</h2>
+                            <p class="text-light pb-3">
+                                You don't have any entry in the diary.
+                            </p>
+
+                            <p class="py-5 fst-italic my-5">
+                                To create a new one click on this card,<br />
+                                or you can click on the + icon.
+                            </p>
+                        </span></a
+                    >
+                </div>
+
+                <%}%> <% docs.forEach(el=>{ %>
+                <div class="card card-width m-2">
+                    <a href="/edit/<%=el._id%>">
+                        <% if(el.images && el.images.length) { %>
+                        <img src="<%=el.images[0]%>" />
+                        <%}else{%>
+                        <img
+                            src="https://source.unsplash.com/320x640?rand=<%=el._id%>"
+                        />
+                        <%}%>
+                        <span class="overlay p-2">
+                            <h2 class="h2 pt-3 pb-1"><%=el.title %></h2>
+                            <p class="text-light pb-3">
+                                <%=new Date(el.createdAt).toDateString()%>
+                            </p>                            
+                            
+                            <% if(el.mood) { %>
+                            <p class="text-light">You seem 
+                                <% switch (el.mood) {
+                                    case 'happy' : %>
+                                            Happy &#128522;
+                                            <% break;
+                                    
+                                    case 'sad' : %>
+                                            Sad &#128532;
+                                            <% break;
+                                    
+                                    case 'angry' : %>
+                                            Angry &#128545;
+                                            <% break;
+                                    
+                                    case 'stressed' : %>
+                                            Stressed &#128553;
+                                            <% break;
+                                    
+                                    case 'scared' : %>
+                                            Stressed &#128560;
+                                            <% break;                                
+                                    } %>
+                            </p>
+                            <%}%> <% if(el.entries) { %>
+                            <p class="py-5 fst-italic my-5">
+                                <%=el.entries%> entries on this day
+                            </p>
+                            <%}%>
+                        </span></a
+                    >
+                </div>
+                <% })%>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Bootstrap default footer -->
+<footer class="navbar fixed-bottom mb-lg-2 mb-2">
+    <div class="container-fluid d-flex">
+        <span
+            class="
+                badge
+                rounded-pill
+                bg-white bg-gradient
+                text-dark
+                p-2
+                mx-3
+                shadow
+            "
+            id="weather"
+        >
+            <!-- Content is dynamically inserted --> </span
+        ><a href="/edit/new" class="link-dark text-decoration-none">
+            <span
+                class="
+                    pill
+                    bg-white bg-gradient
+                    text-dark
+                    mx-3
+                    d-flex
+                    align-items-center
+                    shadow
+                "
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    fill="currentColor"
+                    class="bi bi-plus-circle"
+                    viewBox="0 0 16 16"
+                >
+                    <path
+                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                    />
+                    <path
+                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                    />
+                </svg>
+                <span class="pill-text mx-2">New</span>
+            </span></a
+        >
+    </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--  Flatpickr  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
+<script>
+    const dateTable = {<% dates.forEach(element => { %>  "<%= element.createdAt.toLocaleDateString("en-in")%>"  : "<%=element._id%>", <% }) %>}
+    $(".picker").flatpickr({
+        disableMobile: true,
+        onChange: function (selectedString) {
+            window.location = `/edit/${dateTable[new Date(selectedString).toLocaleDateString("en-in")]}`;
+        },
+        enable: [<% dates.forEach(element => { %>new Date("<%=  element.createdAt%>"),<% }) %>],
+    });
+</script>

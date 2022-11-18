@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CardView</title>
+        <link rel="icon" type="image/png" href="../home/assets/favicon.png" />
+        <!-- Bootstrap and Popper.js and Font Face-->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+            crossorigin="anonymous"
+            defer
+        ></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous"
+        ></script>
+        <!-- Custom Imports -->
+        <link rel="stylesheet" href="../home/style.css" />
+        <link rel="stylesheet" href="./accstyle.css" />
+        <script src="./accmain.js" defer></script>
+    </head>
+    <body>
+        <!-- Bootstrap default Navbar  -->
+        <nav class="navbar navbar-light navbar-expand-lg">
+            <!-- Navbar brand -->
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand">
+                    <img
+                        src="../home/assets/favicon.png"
+                        alt="Diary Icon"
+                        width="30"
+                        height="30"
+                        class="d-inline-block align-top"
+                    />
+                    <span class="h5">Diary</span>
+                </a>
+
+                <!-- Navbar Shortcut Links -->
+                <div class="" id="navbarNav">
+                    <ul class="navbar-nav d-flex w-100 mt-2 mt-lg-0">
+                        <form
+                            class="
+                                form-inline
+                                mx-lg-2
+                                d-flex
+                                align-items-center
+                                d-none
+                            "
+                        >
+                            <label
+                                ><input type="text" id="search-bar" /><span
+                                    class="glyphicon glyphicon-search"
+                                    style="
+                                        padding-right: 3px;
+                                        padding-top: 3px;
+                                        display: inline-block;
+                                    "
+                                    ><img
+                                        src="https://www.pngfind.com/pngs/m/432-4323226_search-icon-transparent-search-button-png-png-download.png"
+                                        alt=""
+                                        style="
+                                            height: 25px;
+                                            display: inline-block;
+                                        " /></span
+                            ></label>
+                        </form>
+                        <div class="d-block ms-0 d-lg-flex ms-lg-auto">
+                            <!-- Inline item for other devices -->
+                            <div class="dropdown">
+                                <a
+                                    class="
+                                        btn
+                                        dropdown-toggle
+                                        badge
+                                        rounded-pill
+                                        bg-white
+                                        text-dark
+                                        shadow-custom
+                                    "
+                                    href="#"
+                                    role="button"
+                                    id="dropdownMenuLink"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    Anurag Verma
+                                    <img
+                                        src="https://lh3.googleusercontent.com/a-/AOh14GjLl6-teruNiz6KsDh9p7Cx-a6z817FzdiUZY1cbiE=s96-c"
+                                        alt="Anurag Verma"
+                                        class="img-fluid avatar"
+                                        crossorigin="anonymous"
+                                    />
+                                </a>
+
+                                <ul
+                                    class="
+                                        dropdown-menu dropdown-menu-end
+                                        position-absolute
+                                    "
+                                    aria-labelledby="dropdownMenuLink"
+                                >
+                                    <li>
+                                        <a
+                                            class="
+                                                dropdown-item
+                                                d-flex
+                                                align-items-center
+                                            "
+                                            href="./accindex.html"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="16"
+                                                height="16"
+                                                fill="currentColor"
+                                                class="mx-1"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"
+                                                />
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+                                                />
+                                            </svg>
+                                            <span>Account</span></a
+                                        >
+                                    </li>
+
+                                    <li>
+                                        <a
+                                            href="#"
+                                            class="
+                                                dropdown-item
+                                                d-flex
+                                                align-items-center
+                                            "
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="16"
+                                                height="16"
+                                                fill="currentColor"
+                                                class="mx-1"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"
+                                                />
+                                                <path
+                                                    fill-rule="evenodd"
+                                                    d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
+                                                />
+                                            </svg>
+                                            <span>Logout</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="row py-5 px-4 mt-4">
+            <div class="col-sm-9 mx-auto mt-2">
+                <!-- Profile widget -->
+                <div class="bg-white shadow rounded ">
+                    <div class="px-4 pt-0 pb-4 cover">
+                        <div class="media profile-head">
+                            <div class="profile mr-3">
+                                <img 
+                                    src="https://lh3.googleusercontent.com/-DI7aFQBOHz0/YEDtS1cA62I/AAAAAAAACTQ/Okm_58lvlKYkl_4goBS73rs9TsHOyCHXACEwYBhgLKtMDAL1Ocqzjrx2SSecs5Se_KW1PfISm3PyDk-ReWw35GFXHJ60tNoze5hBDbmHU6uCK5gc8gP2GKve7W5DmzpKEKXkvoMagcb4Fj-u12uaQGcDaivG4Q2Ljsa8JFr3FvPlbFRQ0y_W02uHaUh716JwzBqiP8ZDshiIx_cWPtiz5BpRSdksJIGhzQrEYsWlBvpMGL8agLibPrRSbhFRDBLZyN8BH87tQ_SD3l-GONc_XTqvH9-1EDEed0Qm-hj_XHgDVzfYbhWK8QED-P8rgxqjtXBDeY8OfwUAUbg2OxZqfKYWs90rxRr7rnxfWbYf6nca7TfZ4X4iZjxxl6nFePfFUbNiN3gB5s2bhSvdtodLCq2Gy-66ASAj2Ek7MxHZPHX1Iguv4ELCw9ZS6z3hD_eapTLFwHu_0SCBu_ZMFenT8gLrCLVci2F6UwtPBVb6Q7deoqfBPii10tQw4uMXWUy9vPSK85PNo1y3dqf7VOkV7ioTk7rYGkU-NyRCal7P4Eh_qyUvhyAxiXvmcORGR7jHWMPb3wDOAG4ZX9LW7n1sRbyD3avvun5CNslVMSODbvuNkkJDOm4YGMsSXWdue44lu8HmjzQW9tehXi_V_ZcE-p-uHIn0wj4y5hQY/w140-h139-p/IMG-20191129-WA0080.jpg" 
+                                    alt="Profile Picture" 
+                                    width="150" 
+                                    class="mx-md-4 mb-2"
+                                    id= "dpimg"
+                                /><br>
+                                <label id="upl" for="myFile" class="btn btn-outline-dark btn-sm btn-block rounded-pill">
+                                    <svg 
+                                        xmlns="http://www.w3.org/2000/svg" 
+                                        width="25" 
+                                        height="32" 
+                                        fill="currentColor" 
+                                        class="bi bi-camera " 
+                                        viewBox="0 0 16 16">
+                                        <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"/>
+                                        <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                                    </svg>
+                                </label> 
+                                <input
+                                        type="file"
+                                        id="myFile"
+                                        name="filename"
+                                        accept=".jpg, .jpeg, .png"
+                                        style="display: none;"
+                                        onchange="importFileandPreview()"
+                                />                               
+                            </div>
+                            
+                            <div class="media-body mb-4 my-auto ms-4 ms-md-0 text-white">
+                                <h4 class="mt-0 mb-0">Hritam Dutta</h4>
+                                <p class="small mb-4"> <i class="fas fa-map-marker-alt mr-2"></i>Account</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="carouselExampleSlidesOnly" class="carousel slide pointer-event" data-bs-touch="false" data-bs-ride="carousel" style= "height: inherit;">
+                                                
+                        <div class="carousel-inner bg-light" role="listbox" style="height:400px !important;">
+
+                            <div class="carousel-item">
+                                <div class="col-sm-12">
+                                    <div class="card" >
+                                        <div class="card-body ">
+                                            <br><br><br>
+                                            
+                                            <div class="row mb-3">
+                                                <div class="col-sm-4">
+                                                    <h6 class="mb-0">Old Password</h6>
+                                                </div>
+                                                <div class="col-sm-8 text-secondary">
+                                                    <input type="text" class="form-control" value="hritam123">
+                                                </div>
+                                            </div>   
+                                            
+                                            <div class="row mb-3">
+                                                <div class="col-sm-4">
+                                                    <h6 class="mb-0">New Password</h6>
+                                                </div>
+                                                <div class="col-sm-8 text-secondary">
+                                                    <input type="text" class="form-control" value="">
+                                                </div>
+                                            </div> 
+            
+                                            <div>
+                                                <div class="col-sm-12" id= "save-ch">
+                                                    <a class="btn btn-info me-sm-2 mt-2">Save Changes</a>
+                                                </div>
+                                            </div>
+                                            <br>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item active">
+                                <div class="col-sm-12">
+                                    <div class="card">
+
+                                        <div class="card-body ">
+                                            <br><br><br>
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <h6 class="mb-0">Full Name</h6>                                        
+                                                </div>
+                                                <div class="col-sm-8 text-secondary">
+                                                    Hritam Dutta
+                                                </div>
+                                            </div>
+                                    
+                                            <hr>
+                
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <h6 class="mb-0">Email</h6>
+                                                </div>
+                                                <div class="col-sm-8 text-secondary">
+                                                    hritam@gmail.com
+                                                </div>
+                                            </div>
+                
+                                            <hr>
+                                            
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <h6 class="mb-0" id="pwd">Password</h6>
+                                                    <a href="#" class= "ms-3 ms-sm-0"id= "reset">Reset Password ?</a>
+                                                </div>
+                                                <div class="col-sm-8 text-secondary">
+                                                    hritam123
+                                                </div>
+                                            </div>
+                
+                                            <hr>
+                
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <h6 class="mb-0">Phone</h6>
+                                                </div>
+                                                <div class="col-sm-8 text-secondary">
+                                                    +91 12345 67809
+                                                </div>
+                                            </div>
+                
+                                            <hr>
+                
+                                            <div>
+                                                <div class="col-sm-12">
+                                                    <a class="btn btn-danger ms-sm-2 mt-2">Delete Account</a>
+                                                </div>
+                                            </div>
+                
+                                            <div>
+                                                <div class="col-sm-12" id="edit">
+                                                    <a class="btn btn-info me-sm-2 mt-2">Edit</a>
+                                                </div>
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-body ">
+                                            <br><br><br>
+
+                                            <div class="row mb-3">
+                                                <div class="col-sm-3">
+                                                    <h6 class="mb-0">Full Name</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary">
+                                                    <input type="text" class="form-control" id= "name-ed" value="Hritam Dutta">
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-3">
+                                                <div class="col-sm-3">
+                                                    <h6 class="mb-0">Email</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary" >
+                                                    <input type="text" class="form-control" id= "email-ed" value="hritam@gmail.com">
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-3">
+                                                <div class="col-sm-3">
+                                                    <h6 class="mb-0">Password</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary">
+                                                    <input type="text" class="form-control" value="hritam123" disabled>
+                                                </div>
+                                            </div> 
+
+                                            <div class="row mb-3">
+                                                <div class="col-sm-3">
+                                                    <h6 class="mb-0">Phone</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary">
+                                                    <input type="text" class="form-control" id= "phone-ed" value="+91 12345 67809">
+                                                </div>
+                                            </div>                                                                                    
+                                            
+                                            <br>
+
+                                            <div>
+                                                <div class="col-sm-12" id= "save">
+                                                    <a class="btn btn-info me-sm-2 mt-2">Save</a>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                      
+                    <!-- <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-body bg-light">
+                                <br><br><br>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Full Name</h6>                                        
+                                    </div>
+                                    <div class="col-sm-9 text-secondary" contenteditable>
+                                        Hritam Dutta
+                                    </div>
+                                </div>
+                        
+                                <hr>
+
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Email</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary" contenteditable>
+                                        hritam@gmail.com
+                                    </div>
+                                </div>
+
+                                <hr>
+                                
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Password</h6>
+                                        <a href="#">Reset Password ?</a>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                        hritam123
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Phone</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary" contenteditable>
+                                        +91 12345 67809
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div>
+                                    <div class="col-sm-12">
+                                        <a class="btn btn-danger ms-sm-2 mt-2">Delete Account</a>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="col-sm-12">
+                                        <a class="btn btn-info me-sm-2 mt-2">Save</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+                       
+    </body>
+</html>

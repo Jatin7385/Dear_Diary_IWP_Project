@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head.html')%>
+    <body>
+        <!-- prettier-ignore -->
+        <%- include('partials/nav.html', {name: name, profile: profile})%> 
+        <% if(page=='home') { %> <%-include('partials/home.html'), {docs: docs, dates: dates}%> <%} %> 
+        <% if(page=='edit') { %> <%-include('partials/edit.html'), {doc: doc}  %> <% } %> 
+        <%if(page=='acc'){%> <%-include('partials/account.html', {name: name, profile: profile, email:email, updated: updated, _id:_id }) %> <% } %>
+    </body>
+</html>

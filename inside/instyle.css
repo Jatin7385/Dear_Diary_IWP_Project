@@ -1,0 +1,123 @@
+.card img {
+    width: 100%;
+    height: 100%;
+}
+#cimg {
+    max-height: 90vh;
+    height: auto;
+    overflow: hidden;
+}
+div#cimg::after {
+    content: "";
+    background-image: linear-gradient(
+        180deg,
+        #00000078,
+        transparent,
+        transparent
+    );
+    position: absolute;
+    top: 0;
+    width: inherit;
+    height: -webkit-fill-available;
+    max-height: 92vh;
+}
+
+#cimg .rounded-pill {
+    position: absolute;
+    left: 1%;
+    z-index: 99;
+    top: 1.5%;
+    fill: #212529;
+    background-color: #ffffff;
+    transition: all cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
+}
+#cimg .rounded-pill:hover {
+    width: 40px;
+    height: 40px;
+    top: 1.25%;
+    left: 0.75%;
+}
+
+#car-upl{
+    margin: 70% 0;
+    text-align: center;
+}
+.bi-upload {
+    position: relative;
+    z-index: 99;
+    fill: #212529;
+    transform: perspective(1px) translateZ(0);
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+.bi-upload:hover, .bi-upload:focus, .bi-upload:active {
+    transform: scale(1.2);    
+}
+
+.card-body {
+    overflow-y: scroll;
+    max-height: 90vh;
+    height: auto;
+}
+.save {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 2%;
+    bottom: 3%;
+    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
+    cursor: pointer;
+}
+.save:hover {
+    width: 45px;
+    height: 45px;
+    right: 1.75%;
+    bottom: 2.5%;
+}
+div > #weather {
+    position: absolute;
+    top: 2%;
+    right: 1.5%;
+}
+.mood-btn button:focus,
+.mood-btn button:active {
+    background-color: #8ee6fc;
+}
+.card-text:empty:before {
+    content: attr(data-placeholder);
+}
+.card-title::first-letter {
+    font-size: 130%;
+}
+.top-10 {
+    top: 3%;
+    bottom: unset;
+}
+.create:hover {
+    background-color: #cecdcd;
+}
+
+
+@media (max-width: 575px) {
+    #car-upl{
+        margin: 85% 0;
+    }
+    #cimg .rounded-pill {
+        left: 3%;
+    }
+    #cimg .rounded-pill:hover {
+        top: 2.75%;
+    }
+    .save {
+        right: 3%;
+        bottom: 2%;
+    }
+    .save:hover {
+        right: 2.5%;
+        bottom: 1.75%;
+    }
+    div #weather {
+        top: 30%;
+        right: 2%;
+    }
+}

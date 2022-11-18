@@ -1,0 +1,117 @@
+<nav class="navbar navbar-light navbar-expand-lg">
+    <!-- Navbar brand -->
+    <div class="container-fluid">
+        <a href="/" class="navbar-brand">
+            <img
+                src="/assets/favicon.png"
+                alt="Diary Icon"
+                width="30"
+                height="30"
+                class="d-inline-block align-top"
+            />
+            <span class="h5">Diary</span>
+        </a>
+
+        <!-- Navbar Shortcut Links -->
+        <div class="" id="navbarNav">
+            <ul class="navbar-nav d-flex w-100 mt-2 mt-lg-0">
+                <div class="d-block ms-0 d-lg-flex ms-lg-auto">
+                    <!-- Inline item for other devices -->
+
+                    <div class="dropdown">
+                        <a
+                            class="
+                                btn
+                                dropdown-toggle
+                                badge
+                                rounded-pill
+                                bg-white
+                                text-dark
+                                shadow-custom
+                            "
+                            href="#"
+                            role="button"
+                            id="dropdownMenuLink"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            <%= name %>
+                            <img
+                                src="<%= profile %>"
+                                alt="<%= name %>"
+                                class="img-fluid avatar"
+                                crossorigin="anonymous"
+                            />
+                        </a>
+
+                        <ul
+                            class="
+                                dropdown-menu dropdown-menu-end
+                                position-absolute
+                            "
+                            aria-labelledby="dropdownMenuLink"
+                        >
+                            <li>
+                                <a
+                                    class="
+                                        dropdown-item
+                                        d-flex
+                                        align-items-center
+                                    "
+                                    href="/account"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="mx-1"
+                                        viewBox="0 0 16 16"
+                                    >
+                                        <path
+                                            d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"
+                                        />
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+                                        />
+                                    </svg>
+                                    <span>Account</span></a
+                                >
+                            </li>
+
+                            <li>
+                                <a
+                                    href="/logout"
+                                    class="
+                                        dropdown-item
+                                        d-flex
+                                        align-items-center
+                                    "
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="mx-1"
+                                        viewBox="0 0 16 16"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"
+                                        />
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
+                                        /></svg
+                                    ><span>Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+</nav>
